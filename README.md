@@ -42,20 +42,20 @@ This can be done in a separate service or via the `http.server` config.
 
 New dependencies that you can use after adding this service:
 
-| tag | type |description | notes |
-|-|-|-|-|
-| `http` | express | The express application | Setup routes, middleware, etc with this object |
+ tag | type |description | notes
+-----|------|------------|-------
+`http` | express | The express application | Setup routes, middleware, etc with this object
 
 ## Configs
 
 New dependencies that you can use after adding this service:
 
-| config | type | description | default value | notes |
-|-|-|-|-|-|
-| `http.port` | number |Port to listen on for HTTP connections | `process.env.PORT`, `8123` <sup>1</sup> | |
-| `http.secret` | string |Server-side secret | `'supersecret'` | Used for securing cookies. |
-| `http.webroot` | string | Path to directory of static files to serve |`null` | Optional. If not set, will not start the static server.  |
-| `http.server` | function | Server startup module | `null` | Optional IoC-injected module to start after registering server. |
+ config | type | description | default value | notes
+--------|------|-------------|---------------|------
+ `http.port` | number | Port to listen on for HTTP connections | `process.env.PORT`, `8123` <sup>1</sup> |
+ `http.secret` | string | Server-side secret | `'supersecret'` | Used for securing cookies.
+ `http.webroot` | string | Path to directory of static files to serve | `null` | Optional. If not set, will not start the static server.
+ `http.server` | function | Server startup module | `null` | Optional IoC-injected module to start after registering server.
 
 <sup>1</sup> Will use the `PORT` environment variable if available, e.g. on Heroku.
 
