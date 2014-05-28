@@ -30,13 +30,14 @@ registering any middleware or setting up of express should happen after this
 service via the `http` dependencies.
 
 ```javascript
-function MyService(app, http)
+function MyService(http)
 {
   http.use(cookieParser());
 }
 ```
 
-This can be done in a separate service or via the `http.server` config.
+This can be done in a separate service following this one, or via specifying a
+module via the `http.server` config.
 
 ## Injectables
 

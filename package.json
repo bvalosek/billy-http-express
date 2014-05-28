@@ -31,7 +31,7 @@
     "tape": "^2.13.1"
   },
   "dependencies": {
-    "billy": "^1.2.0",
+    "billy": "^1.2.1",
     "es6-promise": "^1.0.0",
     "express": "4.x",
     "nodemock": "^0.3.4"
