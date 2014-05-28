@@ -3,7 +3,7 @@ var HttpServer = require('../lib/HttpServer.js');
 var mock       = require('nodemock');
 
 test('configs are set / read', function(t) {
-  t.plan(2);
+  t.plan(3);
 
   // All the config stuff
   var config = mock.mock();
@@ -34,4 +34,5 @@ test('configs are set / read', function(t) {
   });
 
   t.ok(config.assert());
+  t.ok(app.assert());
 });
