@@ -27,7 +27,16 @@
     "type": "git",
     "url": "git@github.com:bvalosek/billy-http-express.git"
   },
+  "peerDependencies": {
+    "billy": "1.x"
+  },
   "devDependencies": {
     "tape": "^2.13.1"
+  },
+  "dependencies": {
+    "billy": "^1.2.0",
+    "es6-promise": "^1.0.0",
+    "express": "4.x",
+    "nodemock": "^0.3.4"
   }
 }
