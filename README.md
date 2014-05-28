@@ -20,7 +20,7 @@ var HttpService = require('billy-http-express');
 
 var app = new Application();
 app.service(HttpService);
-app.config('http.port', 50123);
+app.config('http.port', 8889);
 
 app.start();
 ```
