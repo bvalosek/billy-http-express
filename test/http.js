@@ -5,13 +5,11 @@ var mock       = require('nodemock');
 test('configs are set / read', function(t) {
   t.plan(2);
 
-  // Make sure port is set
-  var config = mock.mock('get')
-    .takes('http.port', process.env.PORT || 8123)
-    .returns(8123);
-
-  // Make sure server T is set
+  // All the config stuff
+  var config = mock
+        .mock('get').takes('http.port', process.env.PORT || 8123);
   config.mock('get').takes('http.server', null);
+  config.mock('get').takes('http.secret', 'supersecret');
 
   // Registers are stuff
   var app = mock.mock('register')
@@ -23,7 +21,6 @@ test('configs are set / read', function(t) {
 
   // fake out express with a successful connnect
   server.http = mock.mock('listen').takesF(function(port, callback) {
-    console.log(port);
     callback(null);
   });
 
