@@ -59,6 +59,7 @@ Available config properties:
  `http.server` | function | Server startup module | `null` | Optional IoC-injected module to start when the server is created. <sup>2</sup>
 
 <sup>1</sup> Will use the `PORT` environment variable if available, e.g. on Heroku.
+
 <sup>2</sup> The `http.server` module must be set before the app is started
 since it is booted with the HTTP service starts.
 
