@@ -1,6 +1,6 @@
 {
   "name": "billy-http-express",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A Billy service that creates an Express 4 HTTP server ",
   "keywords": [
     "billy",
@@ -26,9 +26,6 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:bvalosek/billy-http-express.git"
-  },
-  "peerDependencies": {
-    "billy": "1.x"
   },
   "devDependencies": {
     "tape": "^2.13.1"
