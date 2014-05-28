@@ -49,16 +49,18 @@ New dependencies that you can use after adding this service:
 
 ## Configs
 
-New dependencies that you can use after adding this service:
+Available config properties:
 
  config | type | description | default value | notes
 --------|------|-------------|---------------|------
  `http.port` | number | Port to listen on for HTTP connections | `process.env.PORT`, `8123` <sup>1</sup> |
  `http.secret` | string | Server-side secret | `'supersecret'` | Used for securing cookies.
  `http.webroot` | string | Path to directory of static files to serve | `null` | Optional. If not set, will not start the static server.
- `http.server` | function | Server startup module | `null` | Optional IoC-injected module to start after registering server.
+ `http.server` | function | Server startup module | `null` | Optional IoC-injected module to start when the server is created. <sup>2</sup>
 
 <sup>1</sup> Will use the `PORT` environment variable if available, e.g. on Heroku.
+<sup>2</sup> The `http.server` module must be set before the app is started
+since it is booted with the HTTP service starts.
 
 ## Tern Support
 
