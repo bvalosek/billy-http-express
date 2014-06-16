@@ -1,6 +1,6 @@
 var test       = require('tape');
-var HttpServer = require('../lib/HttpServer.js');
 var mock       = require('nodemock');
+var HttpServer = require('../lib/HttpServer.js');
 
 test('configs are set / read', function(t) {
   t.plan(3);
@@ -16,6 +16,10 @@ test('configs are set / read', function(t) {
 
   // Server is passed in first
   config.mock('get').takes('http.server', null);
+
+  // Basic auth checks
+  config.mock('get').takes('http.username', null);
+  config.mock('get').takes('http.password', null);
 
   var server = new HttpServer(app, config);
 
