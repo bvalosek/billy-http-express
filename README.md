@@ -30,13 +30,12 @@ registering any middleware or setting up of express should happen after this
 service via the `http` dependencies.
 
 ```javascript
-function MyWebService(http)
-{
+app.service(function MyWebService(http) {
   http.use(cookieParser());
   http.get('/', function(req, res) {
     res.send('Hello, World!');
   });
-}
+});
 ```
 
 This can be done in a separate service following this one, or via specifying a
