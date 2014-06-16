@@ -15,7 +15,7 @@ $ npm install billy-http-express
 ## Usage
 
 ```javascript
-var Application = require('billy').Application;
+var Application = require('billy');
 var HttpService = require('billy-http-express');
 
 var app = new Application();
