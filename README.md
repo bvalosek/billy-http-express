@@ -30,9 +30,12 @@ registering any middleware or setting up of express should happen after this
 service via the `http` dependencies.
 
 ```javascript
-function MyService(http)
+function MyWebService(http)
 {
   http.use(cookieParser());
+  http.get('/', function(req, res) {
+    res.send('Hello, World!');
+  });
 }
 ```
 
@@ -55,30 +58,30 @@ Available config properties:
 --------|------|-------------|---------------|------
  `http.port` | number | Port to listen on for HTTP connections | `process.env.PORT`, `8123` <sup>1</sup> |
  `http.secret` | string | Server-side secret | `'supersecret'` | Used for securing cookies.
- `http.webroot` | string | Path to directory of static files to serve | `null` | Optional. If not set, will not start the static server.
- `http.server` | function | Server startup module | `null` | Optional IoC-injected module to start when the server is created. <sup>2</sup>
+ `http.webroot` | string | Path to directory of static files to serve | `null` | Optional. If not set, will not start the static server. <sup>2</sup>
+ `http.server` | function | Server startup module | `null` | Optional IoC-injected module to start when the server is created. <sup>3</sup>
+ `http.username` | string | HTTP basic auth username | `process.env.HTTP_USERNAME`, `null` | If null, any username will be accepted. <sup>4</sup>
+ `http.password` | string | HTTP basic auth password | `process.env.HTTP_PASSWORD`, `null` | If null, any password will be accepted. <sup>4</sup>
 
 <sup>1</sup> Will use the `PORT` environment variable if available, e.g. on Heroku.
 
-<sup>2</sup> The `http.server` module must be set before the app is started
+<sup>2</sup> The static server is mounted during the `start` phase of this
+service, meaning all middleware mounted in the setup / constructor function of
+other services will have precedence, as will any services that start before this
+one.
+
+<sup>3</sup> The `http.server` module must be set before the app is started
 since it is booted with the HTTP service starts.
 
-## Tern Support
-
-The source files are all decorated with [JSDoc3](http://usejsdoc.org/)-style
-annotations that work great with the [Tern](http://ternjs.net/) code inference
-system. Combined with the Node plugin (see this project's `.tern-project`
-file), you can have intelligent autocomplete for methods in this library.
+<sup>4</sup> Basic auth will only be enabled if either `http.username` or
+`http.password` is set
 
 ## Testing
 
-Testing is done with [Tape](http://github.com/substack/tape) and can be run
-with the command `npm test`.
-
-Testing is done with [Travis CI](https://travis-ci.org/bvalosek/billy-http-express).
+```
+$ npm test
+```
 
 ## License
-Copyright 2014 Brandon Valosek
 
-**billy-http-express** is released under the MIT license.
-
+MIT
