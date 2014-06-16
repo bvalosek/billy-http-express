@@ -1,5 +1,11 @@
 # Change History
 
+## 1.3.0 (2014-06-16)
+
+* Switched to `bluebird` for promises
+* Added HTTP basic auth via configs
+* Documentation improvements
+
 ## 1.2.0 (2014-05-28)
 
 * Added debugging statements
