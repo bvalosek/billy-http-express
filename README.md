@@ -57,7 +57,7 @@ Available config properties:
 --------|------|-------------|---------------|------
  `http.port` | number | Port to listen on for HTTP connections | `process.env.PORT`, `8123` <sup>1</sup> |
  `http.secret` | string | Server-side secret | `'supersecret'` | Used for securing cookies.
- `http.webroot` | string | Path to directory of static files to serve | `null` | Optional. If not set, will not start the static server. <sup>2</sup>
+ `http.webroot` | string | Path to directory of static files to serve | `null` | Optional. If not set, will not start the static server. If an array, will serve multiple directories<sup>2</sup>
  `http.server` | function | Server startup module | `null` | Optional IoC-injected module to start when the server is created. <sup>3</sup>
  `http.username` | string | HTTP basic auth username | `process.env.HTTP_USERNAME`, `null` | If null, any username will be accepted. <sup>4</sup>
  `http.password` | string | HTTP basic auth password | `process.env.HTTP_PASSWORD`, `null` | If null, any password will be accepted. <sup>4</sup>

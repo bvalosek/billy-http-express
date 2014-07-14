@@ -1,5 +1,9 @@
 # Change History
 
+## 1.4.0 (2014-07-14)
+
+* `http.webroot` config can now be an array to host multiple directories
+
 ## 1.3.0 (2014-06-16)
 
 * Switched to `bluebird` for promises
