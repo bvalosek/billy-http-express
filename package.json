@@ -1,6 +1,6 @@
 {
   "name": "billy-http-express",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "A Billy service that creates an Express 4 HTTP server ",
   "keywords": [
     "billy",
