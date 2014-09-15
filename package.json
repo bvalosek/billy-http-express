@@ -5,7 +5,8 @@
   "keywords": [
     "billy",
     "express",
-    "http"
+    "http",
+    "billy-service"
   ],
   "author": {
     "name": "Brandon Valosek",
