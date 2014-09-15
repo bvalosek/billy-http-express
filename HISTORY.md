@@ -1,5 +1,9 @@
 # Change History
 
+## 1.4.2 (2014-09-15)
+
+* Added `billy-service` npm tag
+
 ## 1.4.1 (2014-07-14)
 
 * Fix bug with multi directory
